@@ -7,7 +7,9 @@
     </div>
 <?php endif; ?>
 
-<table class="table">
+<div class="row">
+    <div class="col m-4 border border-primary rounded-3 p-3">
+        <table class="table">
         <thead>
             <tr>
                 <th>ID</th>
@@ -51,5 +53,8 @@
             <?php endif; ?>
         </tbody>
     </table>
+    </div>
+</div>
     
-<?= $this->endSection() ?>
+
+    <?= $this->endSection() ?>

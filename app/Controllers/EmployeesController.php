@@ -32,15 +32,15 @@ class EmployeesController extends BaseController{
             $rules = [
                     'last_name' => 'required|max_length[50]|min_length[2]',
                     'first_name' => 'required|max_length[50]|min_length[2]',
-                    'middle_name' => 'permit_empty|max_length[50]|min_length[2]',
+                    'middle_name' => 'required|permit_empty|max_length[50]|min_length[2]',
                     'birthday' => 'required|valid_date',
-                    'gender' => 'permit_empty|max_length[50]|min_length[2]',
-                    'nationality' => 'permit_empty|max_length[50]|min_length[2]',
-                    'height' => 'permit_empty|numeric',
-                    'weight' => 'permit_empty|numeric',
-                    'mobile_number' => 'permit_empty|max_length[15]|min_length[7]',
-                    'province' => 'permit_empty|max_length[50]|min_length[2]',
-                    'city' => 'permit_empty|max_length[50]|min_length[2]',
+                    'gender' => 'required|permit_empty|max_length[50]|min_length[2]',
+                    'nationality' => 'required|permit_empty|max_length[50]|min_length[2]',
+                    'height' => 'required|permit_empty|numeric',
+                    'weight' => 'required|permit_empty|numeric',
+                    'mobile_number' => 'required|permit_empty|max_length[15]|min_length[7]',
+                    'province' => 'required|permit_empty|max_length[50]|min_length[2]',
+                    'city' => 'required|permit_empty|max_length[50]|min_length[2]',
                 ];
 
                 
@@ -94,7 +94,7 @@ class EmployeesController extends BaseController{
             ]);
         }
 
-        $data = $this->request->getPost(['first_name','last_name','middle_name','birthday']);
+        $data = $this->request->getPost(['first_name','last_name','middle_name','birthday','gender','nationality','height','weight','mobile_number','province','city']);
         
         $model = new EmployeesModel();
         $model->update($id, $data);

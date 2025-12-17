@@ -24,7 +24,7 @@
                     <a class="nav-link active" aria-current="page" href="<?= site_url('employees') ?>">Home</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="<?= site_url('employees/create') ?>">Add Employee</a>
+                    <a class="nav-link" href="<?= site_url('employees/form') ?>">Add Employee</a>
                     </li>
                 </ul>
                 </div>

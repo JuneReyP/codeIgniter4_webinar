@@ -2,7 +2,7 @@
 <?= $this->section('content') ?>
 
 <div>
-    <h1>Edit Employee</h1>
+    
 
     <?php if(session()->getFlashdata('validation')): ?>
         <div style="color: red;">
@@ -12,7 +12,8 @@
 
 
 
-    <form class="row g-3" action="<?= site_url('employees/update/'.$employee['id']) ?>" method="post">
+    <form class="row g-3 m-4 border border-primary rounded-3 p-3" action="<?= site_url('employees/update/'.$employee['id']) ?>" method="post">
+        <h1>Edit Employee</h1>
         <div class="col-md-4">
             <label for="validationDefault01" class="form-label">First name</label>
             <input type="text" class="form-control" id="validationDefault01"  name="first_name" value="<?= esc(old('first_name', $employee['first_name'])) ?>">
@@ -61,7 +62,7 @@
             <button class="btn btn-primary" type="submit">Update Employee</button>
         </div>
     </form>
-    
+
 </div>
 
 <?= $this->endSection() ?>

@@ -9,7 +9,6 @@ $routes->get('/', 'Home::index');
 $routes->get('employees', 'EmployeesController::index');
 $routes->get('employees/index', 'EmployeesController::index');
 $routes->get('employees/form', 'EmployeesController::create');
-$routes->get('employees/create', 'EmployeesController::create');
 
 // store employee route
 $routes->post('employees/store', 'EmployeesController::store');
