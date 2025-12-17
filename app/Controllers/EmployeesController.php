@@ -64,7 +64,7 @@ class EmployeesController extends BaseController{
     }
 
 
-    public function update(){
+    public function update($id){
         helper('form');
         $rules = [
                     'last_name' => 'required|max_length[50]|min_length[2]',
@@ -81,7 +81,6 @@ class EmployeesController extends BaseController{
         }
 
         $data = $this->request->getPost(['first_name','last_name','middle_name','birthday']);
-        $id = $this->request->getPost('id');
         
         $model = new EmployeesModel();
         $model->update($id, $data);

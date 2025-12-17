@@ -10,9 +10,8 @@
         </div>
     <?php endif; ?>
 
-    <form action="<?= site_url('employees/update') ?>" method="post">
+    <form action="<?= site_url('employees/update/'.$employee['id']) ?>" method="post">
         <?= csrf_field() ?>
-        <input type="hidden" name="id" value="<?= esc($employee['id']) ?>" />
         <Label>First Name</Label>
         <input type="text" name="first_name" value="<?= esc(old('first_name', $employee['first_name'])) ?>" />
         <br>

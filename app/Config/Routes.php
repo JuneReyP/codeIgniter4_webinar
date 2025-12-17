@@ -15,7 +15,7 @@ $routes->get('employees/create', 'EmployeesController::create');
 $routes->post('employees/store', 'EmployeesController::store');
 
 // update employee route
-$routes->post('employees/update', 'EmployeesController::update');
+$routes->post('employees/update/(:num)', 'EmployeesController::update/$1');
 
 $routes->get('employees/edit/(:num)', 'EmployeesController::edit/$1');
 $routes->get('employees/delete/(:num)', 'EmployeesController::delete/$1');
