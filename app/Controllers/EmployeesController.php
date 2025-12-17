@@ -80,8 +80,8 @@ class EmployeesController extends BaseController{
             ]);
         }
 
-        $id = $this->request->getPost('id');
         $data = $this->request->getPost(['first_name','last_name','middle_name','birthday']);
+        $id = $this->request->getPost('id');
         
         $model = new EmployeesModel();
         $model->update($id, $data);
@@ -89,8 +89,17 @@ class EmployeesController extends BaseController{
         return redirect()->to('/employees')->with('success', 'Employee updated successfully!');
     }
 
-    public function delete(){
-        
+    public function delete($id){
+        $model = new EmployeesModel();
+        $employee = $model->find($id);
+
+        // check if employee exists
+        if(!$employee){
+            throw new \CodeIgniter\Exceptions\PageNotFoundException('Employee not found');
+        }
+        // delete employee
+        $model->delete($id);
+        return redirect()->to('/employees')->with('success', "Employee with ID $id deleted successfully!");
     }
 
 
