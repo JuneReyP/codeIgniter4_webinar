@@ -4,6 +4,6 @@ use CodeIgniter\Model;
 class EmployeesModel extends Model{
     protected $table = 'employees';
     protected $primaryKey = 'id';
-    protected $allowedFields = ['first_name', 'last_name', 'middle_name', 'birthday'];
+    protected $allowedFields = ['first_name', 'last_name', 'middle_name', 'birthday', 'gender','nationality','height','weight','mobile_number','province','city'];
     protected $returnType = 'array';
 }

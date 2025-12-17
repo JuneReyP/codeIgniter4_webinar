@@ -7,7 +7,7 @@
     </div>
 <?php endif; ?>
 
-<table border="1" cellpadding="5" cellspacing="0">
+<table class="table">
         <thead>
             <tr>
                 <th>ID</th>
@@ -15,6 +15,13 @@
                 <th>Last Name</th>
                 <th>Middle Name</th>
                 <th>Birthday</th>
+                <th>Gender</th>
+                <th>Nationality</th>
+                <th>Height</th>
+                <th>Weight</th>
+                <th>Mobile Number</th>
+                <th>Province</th>
+                <th>City</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -27,7 +34,14 @@
                         <td><?= esc($employee['last_name']) ?></td>
                         <td><?= esc($employee['middle_name']) ?></td>
                         <td><?= esc($employee['birthday']) ?></td>
-                        <td><a href="<?= site_url('employees/edit/'.$employee['id']) ?>">Edit</a> | <a href="<?= site_url('employees/delete/'.$employee['id']) ?>" onclick="return confirm('Delete this employee?')">Delete</a></td>
+                        <td><?= esc($employee['gender']) ?></td>
+                        <td><?= esc($employee['nationality']) ?></td>
+                        <td><?= esc($employee['height']) ?>Cm</td>
+                        <td><?= esc($employee['weight']) ?>Kg</td>
+                        <td><?= esc($employee['mobile_number']) ?></td>
+                        <td><?= esc($employee['province']) ?></td>
+                        <td><?= esc($employee['city']) ?></td>
+                        <td><a class="text-decoration-none" href="<?= site_url('employees/edit/'.$employee['id']) ?>">✏️</a> | <a class="text-decoration-none" href="<?= site_url('employees/delete/'.$employee['id']) ?>" onclick="return confirm('Delete this employee?')">🗑️</a></td>
                     </tr>
                 <?php endforeach; ?>
             <?php else: ?>
