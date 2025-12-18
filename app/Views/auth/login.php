@@ -26,7 +26,7 @@
     <div class="container-fluid pt-5">
         <div class="row justify-content-center mt-5">
             <div class="col-3 m-4 border border-primary rounded-3 p-3 mt-5">
-                <h2>Login</h2>
+                <h2>Login Test</h2>
                 <form action="<?= site_url('/login') ?>" method="post">
                     <?=  csrf_field() ?>
                     <div class="mb-3">
