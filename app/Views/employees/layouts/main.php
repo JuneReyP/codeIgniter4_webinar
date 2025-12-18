@@ -21,15 +21,22 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="<?= site_url('employees') ?>">Home</a>
+                        <a class="nav-link active" aria-current="page" href="<?= site_url('employees') ?>">Home</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="<?= site_url('employees/form') ?>">Add Employee</a>
+                        <a class="nav-link" href="<?= site_url('employees/form') ?>">Add Employee</a>
+                    </li>
+                    <li class="nav-item">
+                        <!-- <a class="nav-link" href="<?= site_url('login') ?>">Login</a> -->
+                        <a class="nav-link" href="<?= site_url('logout') ?>">Logout</a>
                     </li>
                 </ul>
                 </div>
             </div>
         </nav>
+        <div>
+            Hello <?= session()->get('user.first_name') ?> <?= session()->get('user.last_name') ?>!
+        </div>
     </header>
     <hr>
     
