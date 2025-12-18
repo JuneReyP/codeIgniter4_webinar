@@ -7,6 +7,8 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
     <!-- <h1>Hello June Rey Palabrica from Kabanakalan City of Negros Island Region</h1> -->
@@ -35,13 +37,17 @@
             </div>
         </nav>
         <div>
-            Hello <?= session()->get('user.first_name') ?> <?= session()->get('user.last_name') ?>!
+            Hello <?= session()->get('user.role') ?>!
         </div>
     </header>
     <hr>
-    
-        <?= $this->renderSection('content') ?>
-
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col">
+                <?= $this->renderSection('content') ?>
+            </div>
+        </div>
+    </div>
     
     <hr>
     <footer>

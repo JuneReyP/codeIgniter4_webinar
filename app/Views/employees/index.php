@@ -7,6 +7,33 @@
     </div>
 <?php endif; ?>
 
+
+<div class="row justify-content-center">
+    <div class="col-2 m-4 rounded-3 p-3 text-center shadow">
+        <h1><i class="bi bi-people-fill"></i></h1>
+        <?php if (isset($stats)): ?>
+            <div class="fs-4 fw-bold text-primary"><?= esc($stats['total']) ?></div>
+            <div class="text-muted small">Total Employee</div>
+        <?php endif; ?>
+    </div>
+    <div class="col-2 m-4 rounded-3 p-3 text-center shadow">
+        <h1><i class="bi bi-gender-female"></i></h1>
+        <?php if (isset($stats)): ?>
+            <div class="fs-4 fw-bold text-danger"><?= esc($stats['female']) ?></div>
+            <div class="text-muted small">Female</div>
+        <?php endif; ?>
+    </div>
+    <div class="col-2 m-4 rounded-3 p-3 text-center shadow">
+        <h1><i class="bi bi-gender-male"></i></h1>
+        <?php if (isset($stats)): ?>
+            <div class="fs-4 fw-bold text-success"><?= esc($stats['male']) ?></div>
+            <div class="text-muted small">Male</div>
+        <?php endif; ?>
+    </div>
+</div>
+
+<hr>
+
 <div class="row">
     <div class="col m-4 border border-primary rounded-3 p-3">
         <table class="table">
@@ -56,5 +83,12 @@
     </div>
 </div>
     
+<?php if (isset($pager)): ?>
+<div class="row">
+    <div class="col m-4 d-flex justify-content-center">
+        <?= $pager->links('default', 'custom_pagination') ?>
+    </div>
+</div>
+<?php endif; ?>
 
     <?= $this->endSection() ?>

@@ -9,9 +9,23 @@ class EmployeesController extends BaseController{
     public function index(){
         // return view('employees/index');
         $employeesModel = model(EmployeesModel::class);
-        // $employees = $employeesModel->findAll();
-        $employees = $employeesModel->orderBy('id', 'ASC')->findAll();
-        return view('employees/index', ['employees' => $employees]);
+        // Pagination
+        $perPage = 5;
+        $employees = $employeesModel->orderBy('id', 'ASC')->paginate($perPage);
+        $pager = $employeesModel->pager;
+
+        // Stats from database (not page-limited)
+        $stats = [
+            'total'  => (new EmployeesModel())->countAll(),
+            'male'   => (new EmployeesModel())->groupStart()->where('gender', 'male')->orWhere('gender', 'm')->groupEnd()->countAllResults(),
+            'female' => (new EmployeesModel())->groupStart()->where('gender', 'female')->orWhere('gender', 'f')->groupEnd()->countAllResults(),
+        ];
+
+        return view('employees/index', [
+            'employees' => $employees,
+            'stats'     => $stats,
+            'pager'     => $pager,
+        ]);
     }
 
     public function create(){
